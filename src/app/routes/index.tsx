@@ -5,6 +5,13 @@ export const createRouter = () =>
     {
       path: '/',
       lazy: async () => {
+        const { Top } = await import('./app/Top');
+        return { Component: Top };
+      },
+    },
+    {
+      path: '/color',
+      lazy: async () => {
         const { ColorList } = await import('./app/ColorList');
         return { Component: ColorList };
       },
